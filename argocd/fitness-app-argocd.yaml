@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Davidgit526/Fitness-Tracker-Dynamic-Volumes.git
+    repoURL: https://github.com/sudipti1234/Fitness-Tracker-Dynamic-Volumes.git
     targetRevision: azure-devops
     path: charts/fitness-app
     helm:
