@@ -11,6 +11,7 @@ pool:
 
 steps:
 - checkout: self
+  persistCredentials: true
 
 - task: Docker@2
   displayName: Build and Push Image
@@ -21,10 +22,6 @@ steps:
     containerRegistry: azure-chandan-acr
     tags: |
       $(tag)
-
-# Update Helm values.yaml
-- checkout: self
-  persistCredentials: true
 
 - script: |
     echo "Updating Helm values.yaml"
@@ -39,5 +36,7 @@ steps:
 
     git add charts/fitness-app/values.yaml
     git commit -m "Update image tag to $(tag)"
-    git push origin azure-devops
+
+    git push https://$(System.AccessToken)@github.com/Davidgit526/Fitness-Tracker-Dynamic-Volumes.git azure-devops
   displayName: Update Helm values
+
