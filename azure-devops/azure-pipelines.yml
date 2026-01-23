@@ -37,6 +37,8 @@ steps:
     git add charts/fitness-app/values.yaml
     git commit -m "Update image tag to $(tag)"
 
-    git push https://$(GITHUB_PAT)@github.com/Davidgit526/Fitness-Tracker-Dynamic-Volumes.git azure-devops
+    git push https://$GITHUB_PAT@github.com/Davidgit526/Fitness-Tracker-Dynamic-Volumes.git azure-devops
   displayName: Update Helm values
+  env:
+    GITHUB_PAT: $(GITHUB_PAT)
 
