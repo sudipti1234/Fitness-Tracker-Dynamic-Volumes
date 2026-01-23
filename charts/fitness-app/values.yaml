@@ -6,7 +6,7 @@ fitnessApp:
 
   image:
     repository: fitnessacr123.azurecr.io/fitness-app
-    tag: "429"
+    tag: "431"
 
   containerPort: 5000
 
@@ -46,7 +46,7 @@ mongodb:
   replicas: 2
 
   image: mongo
-  tag: "429"
+  tag: "431"
   containerPort: 27017
 
   service:
