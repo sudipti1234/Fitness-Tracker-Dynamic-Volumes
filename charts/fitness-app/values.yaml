@@ -5,7 +5,7 @@ fitnessApp:
   replicas: 2
 
   image:
-    repository: fitnessacr123.azurecr.io/fitness-app
+    repository: chandanacr.azurecr.io/fitness-app
     tag: "448"
 
   containerPort: 5000
