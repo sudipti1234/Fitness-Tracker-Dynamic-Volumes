@@ -31,7 +31,10 @@ steps:
     git config user.email "azure-devops@pipeline.com"
     git config user.name "azure-devops"
 
-    git checkout azure-devops
+    # FIX: create and switch to branch explicitly
+    git fetch origin
+    git checkout -B azure-devops origin/azure-devops
+
     git add charts/fitness-app/values.yaml
     git commit -m "Update image tag to $(tag)"
     git push origin azure-devops
