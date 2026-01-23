@@ -7,11 +7,9 @@ spec:
   project: default
 
   source:
-    # GitHub Pages URL (Helm repository)
-    repoURL: https://Davidgit526.github.io/Fitness-Tracker-Dynamic-Volumes
-    chart: fitness-app-chart
-    # Deploy latest released chart version
-    targetRevision: "*"
+    repoURL: https://github.com/Davidgit526/Fitness-Tracker-Dynamic-Volumes.git
+    targetRevision: azure-devops
+    path: charts/fitness-app
     helm:
       valueFiles:
         - values.yaml
@@ -26,4 +24,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
