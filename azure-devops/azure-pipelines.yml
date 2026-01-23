@@ -23,6 +23,9 @@ steps:
       $(tag)
 
 # Update Helm values.yaml
+- checkout: self
+  persistCredentials: true
+
 - script: |
     echo "Updating Helm values.yaml"
 
@@ -31,7 +34,6 @@ steps:
     git config user.email "azure-devops@pipeline.com"
     git config user.name "azure-devops"
 
-    # FIX: create and switch to branch explicitly
     git fetch origin
     git checkout -B azure-devops origin/azure-devops
 
